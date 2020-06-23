@@ -11,8 +11,13 @@
         $advisor = '';
         $name = '';
         $handle = fopen("test.csv", "r");
+        if(isset($_GET['abc'])){
+            $index = $_GET['abc'];
+        } else {
+            $index = 0;
+        }
         for ($i = 0; $row = fgetcsv($handle ); ++$i) {
-            if($i == $_GET['abc'] ){
+            if($i == $index ){
                 $name = $row[0];
                 $advisor = $row[1];
             }
@@ -61,9 +66,9 @@
                     
                 </div>
             </div>
-            <?php echo $_GET['abc']; ?>
-            <a style="position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad.php?abc=<?php echo $_GET['abc']-1; ?>">Prev </a>
-            <a style="position:absolute;bottom:20px;right:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad.php?abc=<?php echo $_GET['abc']+1; ?>">Next </a>
+            <?php echo $index; ?>
+            <a style="position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad.php?abc=<?php echo $index-1; ?>">Prev </a>
+            <a style="position:absolute;bottom:20px;right:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad.php?abc=<?php echo $index+1; ?>">Next </a>
         </div>
 
     </body>
