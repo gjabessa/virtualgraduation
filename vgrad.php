@@ -62,8 +62,8 @@
                 </div>
             </div>
             <?php echo $_GET['abc']; ?>
-            <a style="position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;" href="vgrad.php?abc=<?php echo $_GET['abc']-1; ?>">prev </a>
-            <a style="position:absolute;bottom:20px;right:0px;width:100px;padding:15px; text-align:center;background-color:#03002C" href="vgrad.php?abc=<?php echo $_GET['abc']+1; ?>">next </a>
+            <a style="position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad.php?abc=<?php echo $_GET['abc']-1; ?>">Prev </a>
+            <a style="position:absolute;bottom:20px;right:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad.php?abc=<?php echo $_GET['abc']+1; ?>">Next </a>
         </div>
 
     </body>
