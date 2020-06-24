@@ -65,29 +65,8 @@
         $image = 'aaubackground';
         $title = 'aa';
         $handle = fopen("test.csv", "r");
-        if(isset($_GET['abc'])){
-            $index = $_GET['abc'];
-            if($index < 0){
-                $index = -1;
-            }
-        } else {
-            $index = -1;
-        }
-        for ($i = 0; $row = fgetcsv($handle ); ++$i) {
-            if($i == $index ){
-                $name = $row[0];
-                $image = $name;
-                $advisor = $row[1];
-                $title = $row[2];
-                break;
-            }
-        }
-        if($i < $index){
-            $index = -1;
-        }
-        ?>
-           
-            <div style="width:100%;text-align:center">
+        ?>   
+        <div style="width:100%;text-align:center">
                 <img src="hiclipart.com1.png"  id="hat_clip" width="200px">
                 
                 <div id="rightdiv_content">
@@ -112,25 +91,21 @@
             </div>
             <div style="width:100%;text-align:center">
             <center>
-                    <ul  style="width:50%;list-style-type:none;background: transparent;border:4px solid #D4C06A;">
-                        <li>List of Graduates</li>
-                        <li>List of Graduates</li>
-                        <li>List of Graduates</li>
-                        <li>List of Graduates</li>
-                        <li>List of Graduates</li>
-                        <li>List of Graduates</li> <li>List of Graduates</li> <li>List of Graduates</li> <li>List of Graduates</li> <li>List of Graduates</li> <li>List of Graduates</li> <li>List of Graduates</li> <li>List of Graduates</li>
+                    <ul  style="width:50%;list-style-type:none;background: transparent;margin-left:0px;padding-left:0px;height:560px;overflow-x:auto;border:4px solid #D4C06A;font-size:20px">
+                       
+                        <li style="width:100%;border:0 solid #D4C06A;border-bottom-width:4px"><b>List of Graduates 2019/20</b></li>
+                        <?php for ($i = 0; $row = fgetcsv($handle ); ++$i) {
+                           
+                                $name = $row[0];
 
-                        <li>List of Graduates</li>
-                        <li>List of Graduates</li>
-                        <li>List of Graduates</li>
-                        <li>List of Graduates</li>
-                        <li>List of Graduates</li>
-                        <li>List of Graduates</li>
-                        <li>List of Graduates</li>
-                        <li>List of Graduates</li>
-                        <li>List of Graduates</li>
-                        <li>List of Graduates</li>
-                        <li>List of Graduates</li>
+                                ?>
+                                
+                        
+                        
+                        <li><?php echo $name; ?></li>
+                   <?php }
+                         ?>
+                        
                         </ul>
                     </ul>
             </center>
