@@ -11,8 +11,11 @@
         margin:50px 150px 100px 150px; width:720px;height:738px;
     }
 	#rightdiv{
-            float: left;margin-top:20px;background-size: 100% 100%;
+            float: left;margin-top:50px;background-size: 100% 100%;
         }
+    #advisor{
+        position:absolute;right:0px;bottom:85px;
+    }
     #box1{
         height:711px;width:729px;margin:27px 0;
     }
@@ -34,7 +37,7 @@
     #image{
         width:702px;
     }
-    @media only screen and (max-width: 1200px)  {
+    @media only screen and (max-width: 1286px)  {
         #leftdiv{
             position:relative;margin:10px 20px 100px 50px;width:750px;height: 500px;
         }
@@ -54,8 +57,11 @@
         #prevbtn{
             display:none;
         }
+        #advisor{
+            position:relative;bottom:auto;
+        }
     }
-    @media only screen and (min-width: 1200px) and (max-width: 1660px)  {
+    @media only screen and (min-width: 1286px) and (max-width: 1660px)  {
         #leftdiv{
             margin:50px 20px 100px 80px;width:750px;height: 500px;
         }
@@ -68,18 +74,19 @@
          #image{
              width:750px;
          }
+         #rightdiv{
+            float: left;margin-top:50px;background-size: 100% 100%;
+        }
     }
-     @media only screen and (min-width: 1200px) and (max-width: 1500px) {
+     @media only screen and (min-width: 1286px) and (max-width: 1500px) {
          body{
              margin-top:0px;
              padding-top: 0px;;
          }
         #leftdiv{
-            width:520px;
+            width:570px;
         }
-        #rightdiv{
-            float: left;margin-top:0px;background-size: 100% 100%;
-        }
+       
         #rightdiv_content{
             padding-top: 10px;
             font-size: medium;
@@ -178,18 +185,20 @@
                         <h2 style="padding:0px;margin:0px">&#x2666;</h2>
                         <h2>School of Commerce</h2>
                     </div>
-                    <div style="max-height:350px;width:600px;text-align: center;font-size: 30px;">
+                    <div style="max-height:370px;width:600px;text-align: center;font-size: 30px;">
                         <b>College of Business & Economics</b><br>
                         ~ <br>
-                        <b>B.Sc in Commerce </b><br>
+                        <b>B.Sc in Commerce </b><br><br>
                         <b>2020</b>
-                        <?php if($advisor){ ?>
-                            <blockquote>Advisor: <?php echo $advisor ?>aaaa aaaa &nbsp;<img style="position:absolute;" src="aauimg.jpg" height="150px">     </blockquote>
+                        
+                        <figure id="advisor">
+                            <img src="aauimg.jpg" height="150px">    
+                            <?php if($advisor){ ?>
+                                <figcaption>Advisor: <?php echo $advisor ?></figcaption>
                         <?php }
                         ?>
+                        </figure>
                            
-
-                        
                     </div>
                     
                 </div>
