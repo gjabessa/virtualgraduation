@@ -8,13 +8,10 @@
 
     <style>
         #leftdiv{
-        margin:20px 150px 100px 150px; width:720px;height:738px;
+        margin:50px 150px 100px 150px; width:720px;height:738px;
     }
-    #grad_name{
-            top:770px;
-        }
 	#rightdiv{
-            float: left;margin-top:50px;background-size: 100% 100%;
+            float: left;margin-top:20px;background-size: 100% 100%;
         }
     #box1{
         height:711px;width:729px;margin:27px 0;
@@ -26,17 +23,20 @@
         height:738px;width:702px;margin:17.5px 0 0 17.5px;overflow: hidden;
     }
     #rightdiv_content{
-        width:600px;height:800px;padding:100px 0px 0px 0px;font-size: x-large;background:rgba(3,0,11,0.85)
+        width:600px;padding:0px 0px 0px 0px;font-size: x-large;background:rgba(3,0,11,0.85)
     }
     #university_descr{
-        height:420px;width:600px;text-align: center;
+        height:400px;width:600px;text-align: center;
     }
     #hat_clip{
         position: absolute;left:1000px;margin-top: 20px;
     }
+    #image{
+        width:702px;
+    }
     @media only screen and (max-width: 1200px)  {
         #leftdiv{
-            position:relative;margin:-10px 20px 100px 50px;width:750px;height: 500px;
+            position:relative;margin:10px 20px 100px 50px;width:750px;height: 500px;
         }
         #hat_clip{
             left:100px;
@@ -48,17 +48,25 @@
         #research_title{
              margin-top:-40px;
          }
-        
+         #nextbtn{
+             display:none;
+         }
+        #prevbtn{
+            display:none;
+        }
     }
     @media only screen and (min-width: 1200px) and (max-width: 1660px)  {
         #leftdiv{
-            margin:-10px 20px 100px 80px;width:750px;height: 500px;
+            margin:50px 20px 100px 80px;width:750px;height: 500px;
         }
         #hat_clip{
-            left:900px;
+            left:850px;
         }
         #research_title{
              margin-top:5px;
+         }
+         #image{
+             width:750px;
          }
     }
      @media only screen and (min-width: 1200px) and (max-width: 1500px) {
@@ -67,20 +75,23 @@
              padding-top: 0px;;
          }
         #leftdiv{
-            margin:-10px 20px 100px 80px;width:520px;height: 500px;
+            width:520px;
         }
         #rightdiv{
             float: left;margin-top:0px;background-size: 100% 100%;
         }
         #rightdiv_content{
-            padding-top: 40px;
-            font-size: medium;height: 500px;
+            padding-top: 10px;
+            font-size: medium;
         }
         #university_descr{
             height:320px;
         }
         #hat_clip{
             position: absolute;left:700px;margin-top: 20px;width: 140px;
+        }
+        #image{
+            width:491.40px;
         }
         #box1{
             height:497px;width:510.30px;margin:20.7px 0;
@@ -91,10 +102,8 @@
         #box-content{
             height:516.60px;width:491.40px;margin:15.75px 0 0 15.75px;overflow: hidden;
         }
-        #grad_name{
-            top:570px;
-        }
 	}
+  
 
     /*
     @media only screen and (max-width: 1550px) {
@@ -142,9 +151,9 @@
         ?>
             <div style="float: left;">
                 <div id="leftdiv" style="text-align: center;">
-                    <h2 id="research_title" style="position:absolute;top:0px;padding-top:10px;"><?php echo $title ?> </h2>
+                    
                     <div id="box-content" style="position: absolute;;background-color: transparent;background: white;">
-                        <img src="<?php echo $image ?>.jpg" alt="image" width="702px">
+                        <img src="<?php echo $image ?>.jpg" alt="image" id="image">
                     </div>
                     <div id="box1" style="position: absolute;;background-color: transparent;border:4px solid #D4C06A;">
                         
@@ -153,8 +162,8 @@
                     <div id="box2" style="position: absolute;background: transparent;border:4px solid #D4C06A;">
 
                     </div>
-                    <h1 id="grad_name" style="position:relative;font-family: 'Italianno', cursive;font-size: 90px;"><?php echo $name  ?></h1>
-                        
+                   
+                    
                 </div>
             </div>
             <div id="rightdiv" >
@@ -163,31 +172,32 @@
                 <div id="rightdiv_content">
                     <div id="university_descr">
                        
-                        <h2>&#x2666;</h2> 
-                        <h1>Addis Ababa University</h1>
-                        <img src="aaulogo.png" width="100px">
+                        <h2 style="padding:0px;margin:0px">&#x2666;</h2> 
+                        <img src="aaulogo.png" width="200px">
                        
-                        <h2>&#x2666;</h2>
+                        <h2 style="padding:0px;margin:0px">&#x2666;</h2>
                         <h2>School of Commerce</h2>
                     </div>
-                    <div style="height:300px;width:600px;text-align: center;font-size: 30px;">
+                    <div style="max-height:350px;width:600px;text-align: center;font-size: 30px;">
                         <b>College of Business & Economics</b><br>
                         ~ <br>
-                        <b>B.Sc in Commerce </b>
+                        <b>B.Sc in Commerce </b><br>
+                        <b>2020</b>
                         <?php if($advisor){ ?>
-                            <blockquote>Advisor: <?php echo $advisor ?></blockquote>
+                            <blockquote>Advisor: <?php echo $advisor ?>aaaa aaaa &nbsp;<img style="position:absolute;" src="aauimg.jpg" height="150px">     </blockquote>
                         <?php }
                         ?>
-                        
-                        
+                           
 
-                        <b>2020</b>
+                        
                     </div>
                     
                 </div>
+                <h1 id="grad_name" style="margin:0px;padding:0px;width:fit-content ;left:0px;position:relative;font-family: 'Italianno', cursive;font-size: 90px;"><?php echo $name  ?></h1>
+                        <h2 id="research_title"  style="padding:0px;position:relative;left:0px;margin:0px;width:fit-content ;"><?php echo $title ?> </h2>
             </div>
             <?php echo $index; ?>
-            <a style="position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad1.php?abc=<?php echo $index-1; ?>">Prev </a>
+            <a id="prevbtn" style="position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad1.php?abc=<?php echo $index-1; ?>">Prev </a>
             <a id="nextbtn" style="position:absolute;bottom:20px;right:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad1.php?abc=<?php echo $index+1; ?>">Next </a>
         </div>
 
