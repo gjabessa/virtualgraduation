@@ -20,7 +20,13 @@
         height:711px;width:729px;margin:27px 0;
     }
     #box2{
-        height:765px;width:675px;margin: 0 27px;
+        height:765px;width:675px;margin: 0 27px;overflow-x:scroll;overflow-y:none;
+    }
+    #box2 li{
+        padding-top:10px;
+        padding-bottom:10px;
+        font-size:20px;
+        
     }
     #box-content{
         height:738px;width:702px;margin:17.5px 0 0 17.5px;overflow: hidden;
@@ -130,12 +136,6 @@
         <script>
         var isPaused=false;
         confetti.start(3000);
-        setInterval(() => {
-            if(!isPaused){
-                document.getElementById('nextbtn').click() 
-            }
-            
-        }, 3000);
         </script>
 
         <div style="width: 100%;">
@@ -169,16 +169,29 @@
             <div style="float: left;">
                 <div id="leftdiv" style="text-align: center;">
                     
-                    <div id="box-content" style="position: absolute;;background-color: transparent;background: white;">
-                        <img src="<?php echo $image ?>.jpg" alt="image" id="image">
-                    </div>
-                    <div id="box1" style="position: absolute;;background-color: transparent;border:4px solid #D4C06A;">
-                        
-                    </div>
                     
-                    <div id="box2" style="position: absolute;background: transparent;border:4px solid #D4C06A;">
+                    
+                    <ul id="box2" style="list-style-type:none;position: absolute;background: transparent;border:4px solid #D4C06A;">
+                        <li>List of Graduates</li>
+                        <li>List of Graduates</li>
+                        <li>List of Graduates</li>
+                        <li>List of Graduates</li>
+                        <li>List of Graduates</li>
+                        <li>List of Graduates</li> <li>List of Graduates</li> <li>List of Graduates</li> <li>List of Graduates</li> <li>List of Graduates</li> <li>List of Graduates</li> <li>List of Graduates</li> <li>List of Graduates</li>
 
-                    </div>
+                        <li>List of Graduates</li>
+                        <li>List of Graduates</li>
+                        <li>List of Graduates</li>
+                        <li>List of Graduates</li>
+                        <li>List of Graduates</li>
+                        <li>List of Graduates</li>
+                        <li>List of Graduates</li>
+                        <li>List of Graduates</li>
+                        <li>List of Graduates</li>
+                        <li>List of Graduates</li>
+                        <li>List of Graduates</li>
+
+                    </ul>
                    
                     
                 </div>

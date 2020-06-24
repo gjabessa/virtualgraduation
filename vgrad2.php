@@ -11,7 +11,7 @@
         margin:50px 150px 100px 150px; width:720px;height:738px;
     }
 	#rightdiv{
-            float: left;margin-top:50px;background-size: 100% 100%;
+            float: left;margin-top:50px;background-size: 100% 100%;background-image:url('graduation_img.png');height:850px
         }
     #advisor{
         position:absolute;right:0px;bottom:85px;
@@ -184,7 +184,7 @@
                 </div>
             </div>
             <div id="rightdiv" >
-                <img src="hiclipart.com1.png" id="hat_clip" width="200px">
+                <img src="hiclipart.com.png" id="hat_clip" width="200px">
                 
                 <div id="rightdiv_content">
                     <div id="university_descr">
@@ -217,8 +217,8 @@
                         <h2 id="research_title"  style="padding:0px;position:relative;left:0px;margin:0px;width:fit-content ;"><?php echo $title ?> </h2>
             </div>
             <button onClick="isPaused=!isPaused"> Pause / Resume</button>
-            <a id="prevbtn" style="position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad1.php?abc=<?php echo $index-1; ?>">Prev </a>
-            <a id="nextbtn" style="position:absolute;bottom:20px;right:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad1.php?abc=<?php echo $index+1; ?>">Next </a>
+            <a id="prevbtn" style="position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad2.php?abc=<?php echo $index-1; ?>">Prev </a>
+            <a id="nextbtn" style="position:absolute;bottom:20px;right:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad2.php?abc=<?php echo $index+1; ?>">Next </a>
         </div>
 
     </body>
