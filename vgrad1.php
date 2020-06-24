@@ -10,6 +10,9 @@
         #leftdiv{
         margin:20px 150px 100px 150px; width:720px;height:738px;
     }
+    #grad_name{
+            top:770px;
+        }
 	#rightdiv{
             float: left;margin-top:50px;background-size: 100% 100%;
         }
@@ -42,7 +45,9 @@
             margin-left: 100px;
             margin-top: 170px;
         }
-        
+        #research_title{
+             margin-top:-40px;
+         }
         
     }
     @media only screen and (min-width: 1200px) and (max-width: 1660px)  {
@@ -52,6 +57,9 @@
         #hat_clip{
             left:900px;
         }
+        #research_title{
+             margin-top:5px;
+         }
     }
      @media only screen and (min-width: 1200px) and (max-width: 1500px) {
          body{
@@ -83,6 +91,9 @@
         #box-content{
             height:516.60px;width:491.40px;margin:15.75px 0 0 15.75px;overflow: hidden;
         }
+        #grad_name{
+            top:570px;
+        }
 	}
 
     /*
@@ -105,7 +116,8 @@
         <?php 
         $advisor = '';
         $name = '';
-        $image = 'aauimg';
+        $image = 'aaubackground';
+        $title = 'aa';
         $handle = fopen("test.csv", "r");
         if(isset($_GET['abc'])){
             $index = $_GET['abc'];
@@ -120,6 +132,7 @@
                 $name = $row[0];
                 $image = $name;
                 $advisor = $row[1];
+                $title = $row[2];
                 break;
             }
         }
@@ -129,6 +142,7 @@
         ?>
             <div style="float: left;">
                 <div id="leftdiv" style="text-align: center;">
+                    <h2 id="research_title" style="position:absolute;top:0px;padding-top:10px;"><?php echo $title ?> </h2>
                     <div id="box-content" style="position: absolute;;background-color: transparent;background: white;">
                         <img src="<?php echo $image ?>.jpg" alt="image" width="702px">
                     </div>
@@ -139,7 +153,8 @@
                     <div id="box2" style="position: absolute;background: transparent;border:4px solid #D4C06A;">
 
                     </div>
-                    <h1 style="position:relative;top:770px;font-family: 'Italianno', cursive;font-size: 90px;"><?php echo $name  ?></h1>
+                    <h1 id="grad_name" style="position:relative;font-family: 'Italianno', cursive;font-size: 90px;"><?php echo $name  ?></h1>
+                        
                 </div>
             </div>
             <div id="rightdiv" >
@@ -156,7 +171,8 @@
                         <h2>School of Commerce</h2>
                     </div>
                     <div style="height:300px;width:600px;text-align: center;font-size: 30px;">
-                        
+                        <b>College of Business & Economics</b><br>
+                        ~ <br>
                         <b>B.Sc in Commerce </b>
                         <?php if($advisor){ ?>
                             <blockquote>Advisor: <?php echo $advisor ?></blockquote>
@@ -165,14 +181,14 @@
                         
                         
 
-                        <h1>2020</h1>
+                        <b>2020</b>
                     </div>
                     
                 </div>
             </div>
             <?php echo $index; ?>
-            <a style="position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad.php?abc=<?php echo $index-1; ?>">Prev </a>
-            <a id="nextbtn" style="position:absolute;bottom:20px;right:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad.php?abc=<?php echo $index+1; ?>">Next </a>
+            <a style="position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad1.php?abc=<?php echo $index-1; ?>">Prev </a>
+            <a id="nextbtn" style="position:absolute;bottom:20px;right:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad1.php?abc=<?php echo $index+1; ?>">Next </a>
         </div>
 
     </body>
