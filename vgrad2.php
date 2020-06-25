@@ -213,8 +213,9 @@
                     </div>
                     
                 </div>
-                <h1 id="grad_name" style="margin:0px;padding:0px;width:fit-content ;left:0px;position:relative;font-family: 'Italianno', cursive;font-size: 90px;"><?php echo $name  ?></h1>
+                <div style="background:rgba(3,0,11,0.85)"><h1 id="grad_name" style="margin:0px;padding:0px;width:fit-content ;left:0px;position:relative;font-family: 'Italianno', cursive;font-size: 90px;"><?php echo $name  ?></h1>
                         <h2 id="research_title"  style="padding:0px;position:relative;left:0px;margin:0px;width:fit-content ;"><?php echo $title ?> </h2>
+                </div>
             </div>
             <button onClick="isPaused=!isPaused"> Pause / Resume</button>
             <a id="prevbtn" style="position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad2.php?abc=<?php echo $index-1; ?>">Prev </a>
