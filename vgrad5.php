@@ -21,8 +21,11 @@
     #university_descr{
         text-align: center;
     }
+    #image1{
+        height:20%;
+    }
     #hat_clip{
-        position: absolute;margin-top: 20px;left:40px;
+        position: absolute;margin-top: 20px;
     }
     #box img{
         
@@ -32,9 +35,14 @@
     }
     #box{
     }
+    @media only screen and (min-width:1500px) {
+        #image1{
+            height:30%;
+        }
+    }
     @media only screen and (max-width: 907px) {
         #hat_clip{
-            position:relative;left:0px
+            
         }
         #box div{
             height:0%;
@@ -63,13 +71,10 @@
         $handle = fopen("test.csv", "r");
         ?>   
         <div style="text-align:center;max-height:100%;min-width:400px">
-                <img src="hiclipart.com1.png" style="position:absolute;left:20px;top:10px" id="hat_clip" width="12%">
-                <img style="position:fixed;right:20px;top:20px" src="aaulogo.png" width="10%">
+                <img src="hiclipart.com1.png" style="position:fixed;right:10%;top:10px" id="hat_clip" width="12%">
+                <img style="position:fixed;left:10%;top:20px" src="aaulogo.png" width="10%">
                 <div id="rightdiv_content">
                     <div id="university_descr">
-                       
-                       
-                       
                         <h2 style="font-size:100%">Addis Ababa University</h2>
                         2019/20
                         <b>Masters Graduates</b><br>
@@ -77,8 +82,8 @@
                       <b>College of .....</b><br>
                       <b>Department of .....</b>
                     </div>
-                    <div id="box" style="padding:0px;min-width:400px;max-width:1000px;margin:0 auto;bottom:0px;text-align: center;font-size: 30px;">
-                            <div></div>
+                    <div id="box" style="padding:0px;min-width:400px;max-width:1200px;margin:0 auto;bottom:0px;text-align: center;font-size: 30px;">
+                            
                             <?php for ($i = 0; $row = fgetcsv($handle ); ++$i) {
                            
                            $name = $row[0];
@@ -86,7 +91,7 @@
                            ?>
                            
                            <figure style="position:relative;width:fit-content;display:inline-block;">
-                                <img  src="<?php echo $name; ?>.jpg" height="20%">
+                                <img  src="<?php echo $name; ?>.jpg" id="image1">
                                 <figcaption><?php echo $name; ?> </figcaption>
                             </figure>
                         <?php }
