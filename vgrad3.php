@@ -28,6 +28,9 @@
         font-size:20px;
         
     }
+    #descr{
+        width:100%;text-align:center
+    }
     #box-content{
         height:738px;width:702px;margin:17.5px 0 0 17.5px;overflow: hidden;
     }
@@ -43,7 +46,18 @@
     #image{
         width:702px;
     }
-
+    @media only screen and (min-width:1300px){
+        #descr{
+            width:fit-content;float:left;margin-left:100px;margin-top:20px;
+        }
+        #list{
+            margin-top:100px;
+        }
+        h1{
+            font-size:40px;
+            padding-top:10px;
+        }
+    }
   
     @media only screen and (max-width: 907px) {
         #hat_clip{
@@ -66,8 +80,8 @@
         $title = 'aa';
         $handle = fopen("test.csv", "r");
         ?>   
-        <div style="width:100%;text-align:center">
-                <img src="hiclipart.com1.png"  id="hat_clip" width="200px">
+        <center><h1>Addis Ababa University</h1><h2>Virtual Graduation</h2><h2>List of Graduates 2019/20</h2></center>
+        <div id="descr">
                 
                 <div id="rightdiv_content">
                     <div id="university_descr">
@@ -89,7 +103,7 @@
                 </div>
                 
             </div>
-            <div style="width:100%;text-align:center">
+            <div id="list" style="width:100%;text-align:center">
             <center>
                     <ul  style="width:50%;list-style-type:none;background: transparent;margin-left:0px;padding-left:0px;height:560px;overflow-x:auto;border:4px solid #D4C06A;font-size:20px">
                        
