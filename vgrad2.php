@@ -203,20 +203,21 @@
                         <b>B.Sc in Commerce </b><br><br>
                         <b>2020</b>
                         
-                        <figure style="margin-right:20px" id="advisor">
+                        <!-- <figure style="margin-right:20px" id="advisor">
                             <img src="aauimg.jpg" height="150px">    
                             
-                        </figure>
-                        <span id="advisor" style="padding-right:10px"><?php if($advisor){ ?>
-                                Advisor: <?php echo $advisor ?>
-                        <?php }
-                        ?>
-                        </span>
+                        </figure> -->
+                        <!-- <span id="advisor" style="padding-right:10px"> -->
+                       
+                        <!-- </span> -->
                     </div>
                     
                 </div>
                 <div style="background:rgba(3,0,11,0.85);height:300px"><h1 id="grad_name" style="margin:0px;padding:0px;width:fit-content ;left:0px;position:relative;font-family: 'Italianno', cursive;font-size: 60px;"><?php echo $name  ?></h1>
                         <h2 id="research_title"  style="padding:0px;position:relative;left:0px;margin:0px;width:fit-content ;"><?php echo $title ?> </h2>
+                        <?php if($advisor){ ?>
+                                <h3 style="margin-top:0px">Advisor: <?php echo $advisor ?></h3>
+                        <?php } ?>
                 </div>
             </div>
             <button onClick="isPaused=!isPaused" style="position:fixed;right:50px"> Pause / Resume</button>

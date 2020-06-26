@@ -203,15 +203,13 @@
                         <b>B.Sc in Commerce </b><br><br>
                         <b>2020</b>
                         
-                        <figure style="margin-right:20px" id="advisor">
+                        <!-- <figure style="margin-right:20px" id="advisor">
                             <img src="aauimg.jpg" height="150px">    
                             
                         </figure>
-                        <span id="advisor" style="padding-right:10px"><?php if($advisor){ ?>
-                                Advisor: <?php echo $advisor ?>
-                        <?php }
-                        ?>
-                        </span>
+                        <span id="advisor" style="padding-right:10px">
+                        
+                        </span> -->
                     </div>
                     
                 </div>
