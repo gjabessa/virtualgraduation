@@ -60,6 +60,12 @@
         <script>
         var isPaused=false;
         confetti.start(3000);
+        setInterval(() => {
+            if(!isPaused){
+                document.getElementById('nextbtn').click() 
+            }
+            
+        }, 3000);
         </script>
 
         <div style="width: 100%;">
@@ -84,20 +90,31 @@
                     </div>
                     <div id="box" style="padding:0px;min-width:400px;max-width:1200px;margin:0 auto;bottom:0px;text-align: center;font-size: 30px;">
                             
-                            <?php for ($i = 0; $row = fgetcsv($handle ); ++$i) {
-                           
-                           $name = $row[0];
-
+                            <?php 
+                            $initial = $_GET['abc'];
+                            for ($i = 0; $row = fgetcsv($handle ); ++$i) {
+                                if($initial <= $i && $i <= $initial+5){
+                                $name = $row[0]; ?> 
+                                    <figure style="position:relative;width:fit-content;display:inline-block;">
+                                        <img  src="<?php echo $name; ?>.jpg" id="image1">
+                                        <figcaption><?php echo $name; ?> </figcaption>
+                                    </figure>
+                                <?php
+                                         }
+                                         
                            ?>
                            
-                           <figure style="position:relative;width:fit-content;display:inline-block;">
-                                <img  src="<?php echo $name; ?>.jpg" id="image1">
-                                <figcaption><?php echo $name; ?> </figcaption>
-                            </figure>
-                        <?php }
-                                ?>
+                           
+                        <?php } 
+                        if(($initial+5) >= $i){
+                                $initial = 0;
+                            } else {
+                                $initial += 5;
+                            }
                             
-                          
+                            ?>
+                            
+                            <a id="nextbtn" href="vgrad5.php?abc=<?php echo $initial; ?>"></a>
                             
                             
                     </div>
