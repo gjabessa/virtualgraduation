@@ -92,7 +92,12 @@
                     <div id="box" style="padding:0px;min-width:400px;max-width:1200px;margin:0 auto;bottom:0px;text-align: center;font-size: 30px;">
                             
                             <?php 
-                            $initial = $_GET['abc'];
+                            if(isset($_GET['abc'])){
+                                $initial = $_GET['abc'];
+                            } else {
+                                $initial = 0;
+                            }
+                           
                             for ($i = 0; $row = fgetcsv($handle ); ++$i) {
                                 if($initial <= $i && $i <= $initial+5){
                                 $name = $row[0]; ?> 
