@@ -165,7 +165,7 @@
             }
         }
         if($i < $index){
-            $index = -1;
+            header("Location: vgrad5.php"); 
         }
         ?>
             <div style="float: left;">
