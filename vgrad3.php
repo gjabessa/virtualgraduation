@@ -48,7 +48,7 @@
     }
     @media only screen and (min-width:1296px){
         #descr{
-            width:fit-content;float:left;margin-left:100px;margin-top:0px;
+            width:100%;float:left;margin-top:0px;
         }
         #list{
             margin-top:50px;
@@ -86,30 +86,20 @@
         $image = 'aaubackground';
         $title = 'aa';
         $handle = fopen("test.csv", "r");
-        ?>   
+        ?>    <div></div>
         <a id="nextbtn" href="vgrad3.php?abc=<?php echo $index+1; ?>"></a>
-        <center><h1>Addis Ababa University</h1><h2>Virtual Graduation</h2><h2>List of Graduates 2019/20</h2></center>
+        <center>
+        <div style="width:750px;position:relative;">
+            <img src="aaulogo.png" style="float:left" width="150px">
+            <div style="width:500px">
+                <h1>Addis Ababa University</h1><h2>School of Commerce</h2>
+                <h2>College of Business & Economics</h2><br>
+                <b>Virtual Graduation List of Graduates 2019/20</b>
+            </div>
+        </div>
+        </center>
         <div id="descr">
                 
-                <div id="rightdiv_content">
-                    <div id="university_descr">
-                       
-                        <!-- <h2 style="padding:0px;margin:0px">&#x2666;</h2>  -->
-                        <img src="aaulogo.png" width="150px">
-                       
-                        <!-- <h2 style="padding:0px;margin:0px">&#x2666;</h2> -->
-                        <h2>School of Commerce</h2>
-                    </div>
-                    <div style="max-height:370px;text-align: center;font-size: 30px;">
-                        <b>College of Business & Economics</b><br>
-                        <b>B.Sc in Commerce </b><br><br>
-                        <b>2020</b>
-                       
-                    </div>
-                    
-                </div>
-                
-            </div>
             <script>
             window.setTimeout(function(){
                
@@ -129,10 +119,10 @@
             
             </script>
             <div id="list" style="width:100%;text-align:center">
-            <center>
-                    <ul id="listcontent"  style="max-height:400px;width:50%;list-style-type:none;background: transparent;margin-left:0px;padding-left:0px;overflow-x:auto;border:4px solid #D4C06A;font-size:20px">
+            <center><h3>BSc in Commerce 2019/20</h3>
+                    <ul id="listcontent"  style="max-height:400px;width:50%;min-width:400px;list-style-type:none;background: transparent;margin-left:0px;padding-left:0px;overflow-x:auto;border:4px solid #D4C06A;font-size:20px">
                        
-                        <li style="position:fixed;background:black;width:48%;border:0 solid #D4C06A;border-bottom-width:4px"><b>List of Graduates 2019/20</b></li>
+                        
                         <br><br>
                         <?php for ($i = 0; $row = fgetcsv($handle ); ++$i) {
                            

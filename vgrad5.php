@@ -82,11 +82,12 @@
                 <div id="rightdiv_content">
                     <div id="university_descr">
                         <h2 style="font-size:100%">Addis Ababa University</h2>
-                        2019/20
-                        <b>Masters Graduates</b><br>
-                      ~<br>
-                      <b>College of .....</b><br>
+                        <b>College of .....</b><br>
                       <b>Department of .....</b>
+                      <br>~<br>
+                      
+                      2019/20
+                        <b>Masters Graduates</b>
                     </div>
                     <div id="box" style="padding:0px;min-width:400px;max-width:1200px;margin:0 auto;bottom:0px;text-align: center;font-size: 30px;">
                             
