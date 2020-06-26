@@ -123,7 +123,7 @@
                     <ul id="listcontent"  style="max-height:400px;width:50%;min-width:400px;list-style-type:none;background: transparent;margin-left:0px;padding-left:0px;overflow-x:auto;border:4px solid #D4C06A;font-size:20px">
                        
                         
-                        <br><br>
+                        <br>
                         <?php for ($i = 0; $row = fgetcsv($handle ); ++$i) {
                            
                                 $name = $row[0];
