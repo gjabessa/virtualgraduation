@@ -14,7 +14,7 @@
             margin-top:50px;background-size: 100% 100%;
         }
     
-        b{
+    b{
         text-transform:capitalize;
     }
     #rightdiv_content{
@@ -62,7 +62,7 @@
         <?php  if(isset($_GET['abc'])){
             $index =$_GET['abc'];
             if($index == 0){
-                header("Location: vgrad51.php"); 
+                header("Location: vgrad5.php"); 
             }
         } ?>
         <script>
@@ -83,7 +83,7 @@
         $name = '';
         $image = 'aaubackground';
         $title = 'aa';
-        $handle = fopen("pg.csv", "r");
+        $handle = fopen("pg1.csv", "r");
         ?>   
         <div style="text-align:center;max-height:100%;min-width:400px">
                 <img src="hiclipart.com1.png" style="position:fixed;right:10%;top:10px" id="hat_clip" width="12%">
@@ -111,7 +111,7 @@
                                 if($initial <= $i && $i <= $initial+5){
                                 $name = $row[1]; ?> 
                                     <figure style="position:relative;width:fit-content;display:inline-block;">
-                                        <img  src="Bedilu-Girma.jpg" id="image1">
+                                        <img  src="grad1.jpg" id="image1">
                                         <figcaption><?php echo $name; ?> </figcaption>
                                     </figure>
                                 <?php
@@ -128,7 +128,7 @@
                             }
                             ?>
                             
-                            <a id="nextbtn" href="vgrad5.php?abc=<?php echo $initial; ?>"></a>
+                            <a id="nextbtn" href="vgrad51.php?abc=<?php echo $initial; ?>"></a>
                             
                             
                     </div>

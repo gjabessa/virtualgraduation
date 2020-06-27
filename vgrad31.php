@@ -85,7 +85,7 @@
         $name = '';
         $image = 'aaubackground';
         $title = 'aa';
-        $filename = 'undergrad.csv';
+        $filename = 'undergrad2.csv';
         if(isset($_GET['file'])){
             $filename = $_GET['file'];
         }
@@ -120,8 +120,8 @@
                 }
             
                 window.setInterval(() => {
-                    window.location.href = "vgrad31.php";
-                }, 15000);
+                    window.location.href = "vgrad3.php";
+                }, 5000);
             
             </script>
             <div id="list" style="width:100%;text-align:center">
