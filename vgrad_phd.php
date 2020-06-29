@@ -11,7 +11,7 @@
         margin:50px 150px 100px 150px; width:720px;height:738px;
     }
 	#rightdiv{
-            float: left;margin-top:50px;background-size: 100% 100%;
+            float: left;margin-top:50px;background-size: 100% 100%;background-image:url('graduation_img.png');
         }
     #advisor{
         position:absolute;right:0px;bottom:85px;
@@ -26,7 +26,7 @@
         height:738px;width:702px;margin:17.5px 0 0 17.5px;overflow: hidden;
     }
     #rightdiv_content{
-        width:600px;padding:0px 0px 0px 0px;font-size: x-large;background:rgba(0,93,170,0.85)
+        width:600px;padding:0px 0px 0px 0px;font-size: x-large;background:rgba(0,93,170,0.85);
     }
     #university_descr{
         height:400px;width:600px;text-align: center;
@@ -84,7 +84,7 @@
              padding-top: 0px;;
          }
         #leftdiv{
-            width:570px;margin:50px 20px 50px 50px;
+            width:570px; margin:50px 20px 50px 50px;
         }
         #rightdiv{
             margin-top:0px;
@@ -150,11 +150,10 @@
         if(isset($_GET['abc'])){
             $index = $_GET['abc'];
             if($index < 0){
-                $index = 0;
-            } 
-            
+                $index = -1;
+            }
         } else {
-            $index = 0;
+            $index = -1;
         }
         for ($i = 0; $row = fgetcsv($handle ); ++$i) {
             if($i == $index ){
@@ -166,7 +165,7 @@
             }
         }
         if($i < $index){
-            header("Location: vgrad.php"); 
+            $index = -1;
         }
         ?>
             <div style="float: left;">
@@ -187,7 +186,7 @@
                 </div>
             </div>
             <div id="rightdiv" >
-                <img src="hiclipart.com1.png" id="hat_clip" width="200px">
+                <img src="hiclipart.com.png" id="hat_clip" width="200px">
                 
                 <div id="rightdiv_content">
                     <div id="university_descr">
@@ -207,19 +206,23 @@
                         <!-- <figure style="margin-right:20px" id="advisor">
                             <img src="aauimg.jpg" height="150px">    
                             
-                        </figure>
-                        <span id="advisor" style="padding-right:10px">
-                        
-                        </span> -->
+                        </figure> -->
+                        <!-- <span id="advisor" style="padding-right:10px"> -->
+                       
+                        <!-- </span> -->
                     </div>
                     
                 </div>
-                <h1 id="grad_name" style="margin:0px;padding:0px;width:fit-content ;left:0px;position:relative;font-family: 'Italianno', cursive;font-size: 60px;"><?php echo $name  ?></h1>
+                <div style="background:rgba(0,93,170,0.85);height:300px"><h1 id="grad_name" style="margin:0px;padding:0px;width:fit-content ;left:0px;position:relative;font-family: 'Italianno', cursive;font-size: 60px;"><?php echo $name  ?></h1>
                         <h2 id="research_title"  style="padding:0px;position:relative;left:0px;margin:0px;width:fit-content ;"><?php echo $title ?> </h2>
+                        <?php if($advisor){ ?>
+                                <h3 style="margin-top:0px">Advisor: <?php echo $advisor ?></h3>
+                        <?php } ?>
+                </div>
             </div>
-            <button onClick="isPaused=!isPaused"  style="position:fixed;right:50px"> Pause / Resume</button>
-            <a id="prevbtn" style="opacity:0.5;position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad1.php?abc=<?php echo $index-1; ?>">Prev </a>
-            <a id="nextbtn" style="opacity:0.5;position:absolute;bottom:20px;right:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad<?php echo $index+1; ?>.php">Next </a>
+            <button onClick="isPaused=!isPaused" style="position:fixed;right:50px"> Pause / Resume</button>
+            <a id="prevbtn" style="position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;opacity:0.5;text-decoration:none" href="vgrad2.php?abc=<?php echo $index-1; ?>">Prev </a>
+            <a id="nextbtn" style="position:absolute;bottom:20px;right:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;opacity:0.5;text-decoration:none" href="vgrad2.php?abc=<?php echo $index+1; ?>">Next </a>
         </div>
 
     </body>

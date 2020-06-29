@@ -150,11 +150,11 @@
         if(isset($_GET['abc'])){
             $index = $_GET['abc'];
             if($index < 0){
-                $index = 0;
+                $index = -1;
             } 
             
         } else {
-            $index = 0;
+            $index = -1;
         }
         for ($i = 0; $row = fgetcsv($handle ); ++$i) {
             if($i == $index ){
@@ -219,7 +219,7 @@
             </div>
             <button onClick="isPaused=!isPaused"  style="position:fixed;right:50px"> Pause / Resume</button>
             <a id="prevbtn" style="opacity:0.5;position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad1.php?abc=<?php echo $index-1; ?>">Prev </a>
-            <a id="nextbtn" style="opacity:0.5;position:absolute;bottom:20px;right:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad<?php echo $index+1; ?>.php">Next </a>
+            <a id="nextbtn" style="opacity:0.5;position:absolute;bottom:20px;right:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad.php">Next </a>
         </div>
 
     </body>

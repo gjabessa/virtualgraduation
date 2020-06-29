@@ -92,9 +92,9 @@
                <form method="POST">
                 <select name="category">
                     <option value="vgrad3">Degree</option>
-                    <option value="vgrad1">Masters Distinction</option>
+                    <option value="landing">Masters Distinction</option>
                     <option value="vgrad5">Masters</option>
-                    <option value="vgrad2">PHD</option>
+                    <option value="vgrad_phd">PHD</option>
                 </select>               
                 <button type="submit" name="submit">Submit</button>
                 </form>

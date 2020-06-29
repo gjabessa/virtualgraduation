@@ -8,134 +8,71 @@
 
     <style>
         #leftdiv{
-        margin:50px 150px 100px 150px; width:720px;height:738px;
+         width:720px;height:738px;
     }
 	#rightdiv{
-            float: left;margin-top:50px;background-size: 100% 100%;
+            margin-top:50px;background-size: 100% 100%;
         }
-    #advisor{
-        position:absolute;right:0px;bottom:85px;
-    }
-    #box1{
-        height:711px;width:729px;margin:27px 0;
-    }
-    #box2{
-        height:765px;width:675px;margin: 0 27px;
-    }
-    #box-content{
-        height:738px;width:702px;margin:17.5px 0 0 17.5px;overflow: hidden;
+    
+    b{
+        text-transform:capitalize;
     }
     #rightdiv_content{
-        width:600px;padding:0px 0px 0px 0px;font-size: x-large;background:rgba(0,93,170,0.85)
+        padding:20px 0px 0px 0px;font-size: x-large;background:#005daa;
     }
     #university_descr{
-        height:400px;width:600px;text-align: center;
+        text-align: center;
+    }
+    #image1{
+        height:20%;
     }
     #hat_clip{
-        position: absolute;left:1000px;margin-top: 20px;
+        position: absolute;margin-top: 20px;
     }
-    #image{
-        width:702px;
-    }
-    @media only screen and (max-width: 1286px)  {
-        #leftdiv{
-            position:relative;margin:10px 20px 100px 50px;width:750px;height: 500px;
-        }
-        #hat_clip{
-            left:100px;
-        }
-        #rightdiv{
-            margin-left: 100px;
-            margin-top: 170px;
-        }
-        #research_title{
-             margin-top:-40px;
-         }
-         #nextbtn{
-             display:none;
-         }
-        #prevbtn{
-            display:none;
-        }
-        #advisor{
-            position:relative;bottom:auto;
-        }
-    }
-    @media only screen and (min-width: 1286px) and (max-width: 1660px)  {
-        #leftdiv{
-            margin:50px 20px 100px 80px;width:750px;height: 500px;
-        }
-        #hat_clip{
-            left:850px;
-        }
-        #research_title{
-             margin-top:5px;
-         }
-         #image{
-             width:750px;
-         }
-         #rightdiv{
-            float: left;margin-top:50px;background-size: 100% 100%;
-        }
-    }
-     @media only screen and (min-width: 1286px) and (max-width: 1500px) {
-         body{
-             margin-top:0px;
-             padding-top: 0px;;
-         }
-        #leftdiv{
-            width:570px;margin:50px 20px 50px 50px;
-        }
-        #rightdiv{
-            margin-top:0px;
-        }
-        #rightdiv_content{
-            padding-top: 0px;
-            font-size: medium;
-        }
-        #university_descr{
-            height:320px;
-        }
-        #hat_clip{
-            position: absolute;left:700px;margin-top: 20px;width: 140px;
-        }
-        #image{
-            width:491.40px;
-        }
-        #box1{
-            height:497px;width:510.30px;margin:20.7px 0;
-        }
-        #box2{
-            height:535.50px;width:472.5px;margin: 0 20.7px;
-        }
-        #box-content{
-            height:516.60px;width:491.40px;margin:15.75px 0 0 15.75px;overflow: hidden;
-        }
-	}
-  
-
-    /*
-    @media only screen and (max-width: 1550px) {
-        #leftdiv{
-            margin:20px 50px 100px 50px;
-        }
-	}
-    @media only screen and (max-width: 1437px) {
-        #leftdiv{
-            margin:0px 20px 100px 50px;
-        }
+    #box img{
         
-	} */
+    }
+    #box div{
+        height:5%;
+    }
+    #box{
+    }
+    @media only screen and (min-width:1500px) {
+        #image1{
+            height:30%;
+        }
+    }
+    @media only screen and (max-width: 907px) {
+        #hat_clip{
+            
+        }
+        #box div{
+            height:0%;
+        }
+        figure{
+            margin:0px;
+        }
+        figcaption{
+            font-size:14px;
+        }
+	}
 	</style>
-    <body style="background-image:url('http://www.aau.edu.et/wp-content/uploads/2014/09/Untitled.png');color:#fff">
+    <body style="background-image:url('http://www.aau.edu.et/wp-content/uploads/2014/09/Untitled.png');color:#fffmargin:0px;">
         <script src="confetti.js-master/confetti.js"></script>
+        <?php  if(isset($_GET['abc'])){
+            $index =$_GET['abc'];
+            if($index == 0){
+                header("Location: vgrad1.php"); 
+            }
+        } ?>
         <script>
         var isPaused=false;
         confetti.start(3000);
         setInterval(() => {
-            if(!isPaused){
+            if(!isPaused ){
                 document.getElementById('nextbtn').click() 
             }
+            
             
         }, 3000);
         </script>
@@ -145,80 +82,66 @@
         $advisor = '';
         $name = '';
         $image = 'aaubackground';
-        $title = '';
-        $handle = fopen("test.csv", "r");
-        if(isset($_GET['abc'])){
-            $index = $_GET['abc'];
-            if($index < 0){
-                $index = -1;
-            }
-        } else {
-            $index = -1;
-        }
-        for ($i = 0; $row = fgetcsv($handle ); ++$i) {
-            if($i == $index ){
-                $name = $row[0];
-                $image = $name;
-                $advisor = $row[1];
-                $title = $row[2];
-                break;
-            }
-        }
-        if($i < $index){
-            header("Location: vgrad5.php"); 
-        }
-        ?>
-            <div style="float: left;">
-                <div id="leftdiv" style="text-align: center;">
-                    
-                    <div id="box-content" style="position: absolute;;background-color: transparent;background: white;">
-                        <img src="<?php echo $image ?>.jpg" alt="image" id="image">
-                    </div>
-                    <div id="box1" style="position: absolute;;background-color: transparent;border:4px solid #fff">
-                        
-                    </div>
-                    
-                    <div id="box2" style="position: absolute;background: transparent;border:4px solid #fff">
-
-                    </div>
-                   
-                    
-                </div>
-            </div>
-            <div id="rightdiv" >
-                <img src="hiclipart.com1.png" id="hat_clip" width="200px">
-                
+        $title = 'aa';
+        $handle = fopen("pg1.csv", "r");
+        ?>   
+        <div style="text-align:center;max-height:100%;min-width:400px">
+                <img src="hiclipart.com1.png" style="position:fixed;right:10%;top:10px" id="hat_clip" width="12%">
+                <img style="position:fixed;left:10%;top:20px" src="aaulogo.png" width="10%">
                 <div id="rightdiv_content">
                     <div id="university_descr">
-                       
-                        <h2 style="padding:0px;margin:0px">&#x2666;</h2> 
-                        <img src="aaulogo.png" width="200px">
-                       
-                        <h2 style="padding:0px;margin:0px">&#x2666;</h2>
-                        <h2>School of Commerce</h2>
+                        <h2 style="font-size:100%">Addis Ababa University</h2>
+                        <b><?php echo fgetcsv($handle )[0]; ?></b><br>
+                      <b><?php echo fgetcsv($handle )[0]; ?></b>
+                      <br>2019/20<br>
+                      
+                      
+                        <b><?php echo fgetcsv($handle )[0]; ?></b>
                     </div>
-                    <div style="max-height:370px;width:600px;text-align: center;font-size: 30px;">
-                        <b>College of Business & Economics</b><br>
-                        ~ <br>
-                        <b>B.Sc in Commerce </b><br><br>
-                        <b>2020</b>
-                        
-                        <!-- <figure style="margin-right:20px" id="advisor">
-                            <img src="aauimg.jpg" height="150px">    
+                    <div id="box" style="padding:0px;min-width:400px;max-width:1200px;margin:0 auto;bottom:0px;text-align: center;font-size: 30px;">
                             
-                        </figure>
-                        <span id="advisor" style="padding-right:10px">
-                        
-                        </span> -->
+                            <?php 
+                            if(isset($_GET['abc'])){
+                                $initial = $_GET['abc'];
+                            } else {
+                                $initial = 0;
+                            }
+                           
+                            for ($i = 0; $row = fgetcsv($handle ); ++$i) {
+                                if($initial <= $i && $i <= $initial+5){
+                                    if(array_key_exists(1,$row)){
+                                        $name = $row[1];
+                                       } ?> 
+                                    <figure style="position:relative;width:fit-content;display:inline-block;">
+                                        <img  src="grad1.jpg" id="image1">
+                                        <figcaption><?php echo $name; ?> </figcaption>
+                                    </figure>
+                                <?php
+                                         }
+                                         
+                           ?>
+                           
+                           
+                        <?php } 
+                        if(($initial+5) >= $i){
+                                $initial = 0;
+                            } else {
+                                $initial += 5;
+                            }
+                            ?>
+                            
+                            <a id="nextbtn" href="vgrad21.php?abc=<?php echo $initial; ?>"></a>
+                            
+                            
                     </div>
                     
                 </div>
-                <h1 id="grad_name" style="margin:0px;padding:0px;width:fit-content ;left:0px;position:relative;font-family: 'Italianno', cursive;font-size: 60px;"><?php echo $name  ?></h1>
-                        <h2 id="research_title"  style="padding:0px;position:relative;left:0px;margin:0px;width:fit-content ;"><?php echo $title ?> </h2>
+                
             </div>
-            <button onClick="isPaused=!isPaused"  style="position:fixed;right:50px"> Pause / Resume</button>
-            <a id="prevbtn" style="opacity:0.5;position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad1.php?abc=<?php echo $index-1; ?>">Prev </a>
-            <a id="nextbtn" style="opacity:0.5;position:absolute;bottom:20px;right:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad1.php?abc=<?php echo $index+1; ?>">Next </a>
+            <div style="width:100%;text-align:center">
+               
+            </div>
+          
         </div>
 
     </body>
