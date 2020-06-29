@@ -132,7 +132,9 @@
                         <br>
                         <?php for ($i = 0; $row = fgetcsv($handle ); ++$i) {
                            
-                                $name = $row[1];
+                           if(array_key_exists(1,$row)){
+                            $name = $row[1];
+                           }
                                 
                                 ?>
                                 
