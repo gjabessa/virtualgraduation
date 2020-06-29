@@ -32,7 +32,7 @@
         height:738px;width:702px;margin:17.5px 0 0 17.5px;overflow: hidden;
     }
     #rightdiv_content{
-        padding:0px 0px 0px 0px;font-size: x-large;background:rgba(3,0,11,0.85)
+        padding:0px 0px 0px 0px;font-size: x-large;background:#005daa
     }
     #university_descr{
         height:400px;text-align: center;
@@ -51,7 +51,7 @@
         }
 	}
 	</style>
-    <body style="background-color: #03000B;color:#D4C06A;">
+    <body style="background-image:url('http://www.aau.edu.et/wp-content/uploads/2014/09/Untitled.png');color:#fff">
         <script src="confetti.js-master/confetti.js"></script>
         <script>
         var isPaused=false;

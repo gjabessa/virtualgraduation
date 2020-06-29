@@ -18,7 +18,7 @@
         text-transform:capitalize;
     }
     #rightdiv_content{
-        padding:20px 0px 0px 0px;font-size: x-large;background:rgba(3,0,11,0.85)
+        padding:20px 0px 0px 0px;font-size: x-large;background:#005daa;
     }
     #university_descr{
         text-align: center;
@@ -57,7 +57,7 @@
         }
 	}
 	</style>
-    <body style="background-color: #03000B;color:#D4C06A;margin:0px;">
+    <body style="background-image:url('http://www.aau.edu.et/wp-content/uploads/2014/09/Untitled.png');color:#fffmargin:0px;">
         <script src="confetti.js-master/confetti.js"></script>
         <?php  if(isset($_GET['abc'])){
             $index =$_GET['abc'];

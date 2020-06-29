@@ -65,7 +65,7 @@
         }
 	}
 	</style>
-    <body style="background-color: #03000B;color:#D4C06A;">
+    <body style="background-image:url('http://www.aau.edu.et/wp-content/uploads/2014/09/Untitled.png');color:#fff">
         <script src="confetti.js-master/confetti.js"></script>
         <script src="jquery-3.5.1.min.js"></script>
         <!-- <script>
@@ -126,7 +126,7 @@
             </script>
             <div id="list" style="width:100%;text-align:center">
             <center><h3><?php echo fgetcsv($handle )[0]; ?> 2019/20</h3>
-                    <ul id="listcontent"  style="max-height:400px;width:50%;min-width:400px;list-style-type:none;background: transparent;margin-left:0px;padding-left:0px;overflow-x:auto;border:4px solid #D4C06A;font-size:20px">
+                    <ul id="listcontent"  style="max-height:400px;width:50%;min-width:400px;list-style-type:none;background: transparent;margin-left:0px;padding-left:0px;overflow-x:auto;border:4px solid #ffffont-size:20px">
                        
                         
                         <br>

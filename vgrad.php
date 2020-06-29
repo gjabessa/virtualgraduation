@@ -4,7 +4,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">  
         <link rel='shortcut icon' href='aaulogo.png' />      
     </head>
-    <body style="background-color: #03000B;color:#D4C06A;">
+    <body style="background-color: #03000B;color:#fff">
         <script src="confetti.js-master/confetti.js"></script>
         <script>confetti.start(3000);</script>
         <div style="width: 100%;">
@@ -38,11 +38,11 @@
                     <div style="position: absolute;;background-color: transparent;background: white;height:738px;width:702px;margin:17.5px 0 0 17.5px;overflow: hidden;">
                         <img src="<?php echo $image ?>.jpg" alt="image" width="702px">
                     </div>
-                    <div style="position: absolute;;background-color: transparent;border:4px solid #D4C06A;height:711px;width:729px;margin:27px 0;">
+                    <div style="position: absolute;;background-color: transparent;border:4px solid #fffheight:711px;width:729px;margin:27px 0;">
                         
                     </div>
                     
-                    <div style="position: absolute;background: transparent;border:4px solid #D4C06A;height:765px;width:675px;margin: 0 27px;">
+                    <div style="position: absolute;background: transparent;border:4px solid #fffheight:765px;width:675px;margin: 0 27px;">
 
                     </div>
                     <h1 style="position:relative;top:770px;font-family: 'Italianno', cursive;font-size: 90px;"><?php echo $name  ?></h1>

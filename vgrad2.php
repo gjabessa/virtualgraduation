@@ -26,7 +26,7 @@
         height:738px;width:702px;margin:17.5px 0 0 17.5px;overflow: hidden;
     }
     #rightdiv_content{
-        width:600px;padding:0px 0px 0px 0px;font-size: x-large;background:rgba(3,0,11,0.85);
+        width:600px;padding:0px 0px 0px 0px;font-size: x-large;background:rgba(0,93,170,0.85);
     }
     #university_descr{
         height:400px;width:600px;text-align: center;
@@ -127,7 +127,7 @@
         
 	} */
 	</style>
-    <body style="background-color: #03000B;color:#D4C06A;">
+    <body style="background-image:url('http://www.aau.edu.et/wp-content/uploads/2014/09/Untitled.png');color:#fff">
         <script src="confetti.js-master/confetti.js"></script>
         <script>
         var isPaused=false;
@@ -174,11 +174,11 @@
                     <div id="box-content" style="position: absolute;;background-color: transparent;background: white;">
                         <img src="<?php echo $image ?>.jpg" alt="image" id="image">
                     </div>
-                    <div id="box1" style="position: absolute;;background-color: transparent;border:4px solid #D4C06A;">
+                    <div id="box1" style="position: absolute;;background-color: transparent;border:4px solid #fff">
                         
                     </div>
                     
-                    <div id="box2" style="position: absolute;background: transparent;border:4px solid #D4C06A;">
+                    <div id="box2" style="position: absolute;background: transparent;border:4px solid #fff">
 
                     </div>
                    
@@ -213,7 +213,7 @@
                     </div>
                     
                 </div>
-                <div style="background:rgba(3,0,11,0.85);height:300px"><h1 id="grad_name" style="margin:0px;padding:0px;width:fit-content ;left:0px;position:relative;font-family: 'Italianno', cursive;font-size: 60px;"><?php echo $name  ?></h1>
+                <div style="background:rgba(0,93,170,0.85);height:300px"><h1 id="grad_name" style="margin:0px;padding:0px;width:fit-content ;left:0px;position:relative;font-family: 'Italianno', cursive;font-size: 60px;"><?php echo $name  ?></h1>
                         <h2 id="research_title"  style="padding:0px;position:relative;left:0px;margin:0px;width:fit-content ;"><?php echo $title ?> </h2>
                         <?php if($advisor){ ?>
                                 <h3 style="margin-top:0px">Advisor: <?php echo $advisor ?></h3>
@@ -221,8 +221,8 @@
                 </div>
             </div>
             <button onClick="isPaused=!isPaused" style="position:fixed;right:50px"> Pause / Resume</button>
-            <a id="prevbtn" style="position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad2.php?abc=<?php echo $index-1; ?>">Prev </a>
-            <a id="nextbtn" style="position:absolute;bottom:20px;right:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;text-decoration:none" href="vgrad2.php?abc=<?php echo $index+1; ?>">Next </a>
+            <a id="prevbtn" style="position:absolute;bottom:20px;left:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;opacity:0.5;text-decoration:none" href="vgrad2.php?abc=<?php echo $index-1; ?>">Prev </a>
+            <a id="nextbtn" style="position:absolute;bottom:20px;right:0px;width:100px;padding:15px; text-align:center;background-color:#03002C;opacity:0.5;text-decoration:none" href="vgrad2.php?abc=<?php echo $index+1; ?>">Next </a>
         </div>
 
     </body>
