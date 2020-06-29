@@ -109,7 +109,9 @@
                            
                             for ($i = 0; $row = fgetcsv($handle ); ++$i) {
                                 if($initial <= $i && $i <= $initial+5){
-                                $name = $row[1]; ?> 
+                                    if(array_key_exists(1,$row)){
+                                        $name = $row[1];
+                                       } ?> 
                                     <figure style="position:relative;width:fit-content;display:inline-block;">
                                         <img  src="grad1.jpg" id="image1">
                                         <figcaption><?php echo $name; ?> </figcaption>
