@@ -51,7 +51,7 @@
         }
 	}
 	</style>
-    <body style="background-image:url('http://www.aau.edu.et/wp-content/uploads/2014/09/Untitled.png');color:#fff">
+    <body style="background:#005daa;color:#fff">
         <script src="confetti.js-master/confetti.js"></script>
         <script>
         var isPaused=false;

@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Addis Ababa University | Virtual Graduation</title>
-        <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">  
+        <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet"> 
         <link rel='shortcut icon' href='aaulogo.png' />      
         <meta name="viewport" content="width=device-width">
     </head>
@@ -127,7 +127,7 @@
         
 	} */
 	</style>
-    <body style="background-image:url('http://www.aau.edu.et/wp-content/uploads/2014/09/Untitled.png');color:#fff">
+    <body style="background:#005daa;color:#fff">
         <script src="confetti.js-master/confetti.js"></script>
         <script>
         var isPaused=false;
