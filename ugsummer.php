@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Addis Ababa University | Virtual Graduation</title>
-        <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">  
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">  --> 
         <link rel='shortcut icon' href='aaulogo.png' />      
         <meta name="viewport" content="width=device-width">
     </head>
@@ -65,7 +65,7 @@
         }
 	}
 	</style>
-    <body style="background-color: #03000B;color:#D4C06A;">
+    <body style="background:#005daa;background-image:url('final_BG.png');color:#fff;">
         <script src="confetti.js-master/confetti.js"></script>
         <script src="jquery-3.5.1.min.js"></script>
         <!-- <script>
@@ -85,22 +85,48 @@
         $name = '';
         $image = 'aaubackground';
         $title = 'aa';
-        $filename = 'undergrad.csv';
+        $filename = 'ug/ugsummer.csv';
         if(isset($_GET['file'])){
             $filename = $_GET['file'];
         }
+        $fieldcount = 0;
+        if(isset($_GET['field'])){
+            $fieldcount = $_GET['field'];
+        }
         $handle = fopen($filename, "r");
         ?>    
-        <a id="nextbtn" href="vgrad3.php?abc=<?php echo $index+1; ?>"></a>
+        
         <center>
         
-                           
         <div style="width:750px;position:relative;">
             <img src="aaulogo.png" style="float:left" width="150px">
-            <div style="width:500px">
-                <h1>Addis Ababa University</h1><h2><?php echo fgetcsv($handle )[0]; ?></h2>
-                <h2><?php echo fgetcsv($handle )[0]; ?></h2>
-                <b>Virtual Graduation List of Graduates 2019/20</b>
+            <div style="padding-top:10px;width:500px">
+                <?php 
+                    
+                    $college = fgetcsv($handle )[0];
+                    $firstdata = '';
+                 ?>
+                 <?php for($i = 0; $i < $fieldcount; ++$i){
+                        fgetcsv($handle);
+                        }
+                        $program = fgetcsv($handle)[0]; 
+                        $row_ = fgetcsv($handle);
+                        if(isset($_GET['college'])){
+                            if($_GET['college'] != ''){
+                                $college = $_GET['college'];
+                            }
+                            
+                        }
+                        if(array_key_exists(1,$row_)){
+                            $firstdata = $row_[1];
+                        } else {
+                            $college = $program;
+                            $program = $row_[0];
+                        }
+                         ?>
+                <h2><?php echo $college; ?></h2>
+                <h2 style="margin-bottom:0px"><?php echo $program;  ?></h2>
+                <h3>SUMMER</h3>
             </div>
         </div>
         </center>
@@ -108,40 +134,60 @@
                 
             <script>
             window.setTimeout(function(){
-               
                 hello()
             })
             var state = false;
             function hello(){
                     $('#listcontent').animate({
                         scrollTop: document.getElementById('listcontent').scrollHeight
-                    }, 120000);
-                    state = true;
+                    }, 50000);
+                    $('#listcontent').bind('scroll', function () {
+                        state = true;
+                        if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+                            setInterval(() => {
+                            document.getElementById('nextbtn').click() ;
+                        }, 1000);
+                    }
+                    })
+
+                    if(!state){
+                        setTimeout(function(){ 
+                            document.getElementById('nextbtn').click(); 
+                            }, 3000);
+                        
+                    }
+                    
                 }
             
-                window.setInterval(() => {
-                    window.location.href = "vgrad31.php";
-                }, 15000);
-            
             </script>
-            <div id="list" style="width:100%;text-align:center">
-            <center><h3><?php echo fgetcsv($handle )[0]; ?> 2019/20</h3>
-                    <ul id="listcontent"  style="max-height:400px;width:50%;min-width:400px;list-style-type:none;background: transparent;margin-left:0px;padding-left:0px;overflow-x:auto;border:4px solid #D4C06A;font-size:20px">
+            <div id="list" style="margin-top:0px;width:100%;text-align:center">
+            <center>
+                    <ul id="listcontent"  style="max-height:400px;width:40%;min-width:400px;list-style-type:none;background:#005daa;margin-left:0px;padding-left:0px;overflow-x:auto;border:4px solid #fff;font-size:25px">
                        
                         
                         <br>
+                        <li><?php echo $firstdata; ?></li> 
                         <?php for ($i = 0; $row = fgetcsv($handle ); ++$i) {
                            
-                                $name = $row[1];
+                           if(array_key_exists(1,$row)){
+                            $name = $row[1];
+                           }else {
+                                           
+                            $fieldcount = $fieldcount+$i+2;
+                            break;
+                            
+                           }
                                 
                                 ?>
                                 
                         <li><?php echo $name; ?></li> 
-                   <?php } 
+                   <?php }
+                   
                          ?> <br><br><br><br><br><br>
                         
                         </ul>
                     </ul>
+                    <a id="nextbtn" href="ugsummer.php?field=<?php echo $fieldcount; ?>&college=<?php echo $college; ?>">next</a>
             </center>
                
             </div>
